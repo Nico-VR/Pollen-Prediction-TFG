@@ -1,0 +1,55 @@
+[project]
+name = "ppf"
+version = "1.0.dev4"
+authors = [
+  { name = "Nicolás Vidal Romero", email = "vidalromeronicolas@gmail.com" },
+  { name = "María Novo Lourés", email = "manovo@uvigo.gal" },
+  { name = "Miguel Reboiro-Jato", email = "mrjato@uvigo.gal" },
+]
+description = "A framework to develop and evaluate pollen prediction algorithms"
+keywords = ["pollen", "prediction", "framework"]
+requires-python = ">=3.12"
+readme = "README.md"
+license = { "file" = "LICENSE" }
+classifiers = [
+  "Programming Language :: Python :: 3.12",
+  "License :: OSI Approved :: MIT License",
+  "Operating System :: OS Independent",
+  "Development Status :: 2 - Pre-Alpha",
+  "Intended Audience :: Developers",
+  "Topic :: Software Development :: Libraries",
+]
+
+dependencies = [
+  "jupyterlab==4.3.6",
+  "matplotlib==3.10.1",
+  "pmdarima==2.0.4",
+  "pytorch-forecasting==1.3.0",
+  "seaborn==0.13.2",
+  "sktime==0.36.0",
+  "statsforecast==2.0.1"
+]
+
+[project.urls]
+source = "https://github.com/sing-group/ppf"
+
+[project.optional-dependencies]
+dev = [
+  "mypy==1.15.0",
+  "pandas-stubs==2.2.3.*",
+  "pyroma==4.2",
+  "twine==6.1.0"
+]
+
+[build-system]
+requires = ["build==1.2.2.post1", "setuptools==78.1.0", "wheel==0.45.1"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools]
+package-dir = { "" = "src" }
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+"*" = ["py.typed", "*.pyi", "*.html"]
